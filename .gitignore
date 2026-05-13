@@ -9,7 +9,7 @@
 *.hef
 *.har
 
-# python wheels
+# python external_wheels
 *.whl
 
 # npy datasets
