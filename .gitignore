@@ -10,7 +10,10 @@
 *.har
 
 # python wheels
+*.whl
 
+# npy datasets
+*.npy
 
 
 
