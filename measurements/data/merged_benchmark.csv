@@ -1,0 +1,85 @@
+Network,Resolution,Inference time [ms],Inference Energy [mA],W,range,library,device
+EfficientNetB0,112 x 112,5.55,0.80,4.11,0.08,modlib,IMX500
+EfficientNetB0,120 x 160,5.52,0.77,4.09,0.08,modlib,IMX500
+EfficientNetB0,224 x 224,8.54,0.79,4.12,0.08,modlib,IMX500
+EfficientNetB0,256 x 256,9.54,0.80,4.13,0.08,modlib,IMX500
+MnasNet1.0,112 x 112,3.52,0.78,4.06,0.08,modlib,IMX500
+MnasNet1.0,120 x 160,4.53,0.78,4.09,0.08,modlib,IMX500
+MnasNet1.0,224 x 224,5.53,0.79,4.10,0.08,modlib,IMX500
+MnasNet1.0,256 x 256,6.52,0.79,4.10,0.08,modlib,IMX500
+MobileNetV2,112 x 112,3.53,0.78,4.05,0.05,modlib,IMX500
+MobileNetV2,120 x 160,3.53,0.78,4.06,0.05,modlib,IMX500
+MobileNetV2,224 x 224,4.53,0.79,4.07,0.05,modlib,IMX500
+MobileNetV2,256 x 256,5.54,0.79,4.09,0.05,modlib,IMX500
+RegNetX002,112 x 112,2.53,0.78,4.05,0.05,modlib,IMX500
+RegNetX002,120 x 160,2.51,0.77,4.03,0.05,modlib,IMX500
+RegNetX002,224 x 224,3.54,0.78,4.05,0.05,modlib,IMX500
+RegNetX002,256 x 256,3.53,0.79,4.09,0.05,modlib,IMX500
+RegNetY002,112 x 112,2.54,0.78,4.07,0.05,modlib,IMX500
+RegNetY002,120 x 160,2.67,0.80,4.07,0.05,modlib,IMX500
+RegNetY002,224 x 224,3.52,0.78,4.06,0.05,modlib,IMX500
+RegNetY002,256 x 256,4.53,0.79,4.08,0.05,modlib,IMX500
+RegNetY004,112 x 112,3.53,0.78,4.08,0.06,modlib,IMX500
+RegNetY004,120 x 160,3.54,0.79,4.07,0.06,modlib,IMX500
+RegNetY004,224 x 224,5.51,0.80,4.10,0.06,modlib,IMX500
+RegNetY004,256 x 256,5.53,0.80,4.13,0.06,modlib,IMX500
+ShuffleNetV2x1.5,112 x 112,3.55,0.78,4.07,0.09,modlib,IMX500
+ShuffleNetV2x1.5,120 x 160,3.53,0.79,4.10,0.09,modlib,IMX500
+ShuffleNetV2x1.5,224 x 224,5.51,0.80,4.12,0.09,modlib,IMX500
+ShuffleNetV2x1.5,256 x 256,5.53,0.80,4.11,0.09,modlib,IMX500
+EfficientNetB0,112 x 112,5.55,0.77,4.00,0.05,picamera2,IMX500
+EfficientNetB0,120 x 160,5.52,0.78,4.04,0.05,picamera2,IMX500
+EfficientNetB0,224 x 224,8.54,0.79,4.10,0.05,picamera2,IMX500
+EfficientNetB0,256 x 256,9.54,0.79,4.10,0.05,picamera2,IMX500
+MnasNet1.0,112 x 112,3.52,0.77,4.02,0.04,picamera2,IMX500
+MnasNet1.0,120 x 160,4.53,0.78,4.04,0.04,picamera2,IMX500
+MnasNet1.0,224 x 224,5.53,0.79,4.06,0.04,picamera2,IMX500
+MnasNet1.0,256 x 256,6.52,0.78,4.04,0.04,picamera2,IMX500
+MobileNetV2,112 x 112,3.53,0.77,4.01,0.02,picamera2,IMX500
+MobileNetV2,120 x 160,3.53,0.78,4.02,0.02,picamera2,IMX500
+MobileNetV2,224 x 224,4.53,0.77,4.01,0.02,picamera2,IMX500
+MobileNetV2,256 x 256,5.54,0.78,4.04,0.02,picamera2,IMX500
+RegNetX002,112 x 112,2.53,0.76,3.94,0.05,picamera2,IMX500
+RegNetX002,120 x 160,2.51,0.77,4.00,0.05,picamera2,IMX500
+RegNetX002,224 x 224,3.54,0.78,4.03,0.05,picamera2,IMX500
+RegNetX002,256 x 256,3.53,0.79,4.06,0.05,picamera2,IMX500
+RegNetY002,112 x 112,2.54,0.75,3.91,0.03,picamera2,IMX500
+RegNetY002,120 x 160,2.67,0.77,3.96,0.03,picamera2,IMX500
+RegNetY002,224 x 224,3.52,0.78,4.02,0.03,picamera2,IMX500
+RegNetY002,256 x 256,4.53,0.79,4.03,0.03,picamera2,IMX500
+RegNetY004,112 x 112,3.53,0.78,4.02,0.03,picamera2,IMX500
+RegNetY004,120 x 160,3.54,0.78,4.03,0.03,picamera2,IMX500
+RegNetY004,224 x 224,5.51,0.79,4.07,0.03,picamera2,IMX500
+RegNetY004,256 x 256,5.53,0.80,4.08,0.03,picamera2,IMX500
+ShuffleNetV2x1.5,112 x 112,3.55,0.79,4.05,0.03,picamera2,IMX500
+ShuffleNetV2x1.5,120 x 160,3.53,0.79,4.06,0.03,picamera2,IMX500
+ShuffleNetV2x1.5,224 x 224,5.51,0.79,4.09,0.03,picamera2,IMX500
+ShuffleNetV2x1.5,256 x 256,5.53,0.80,4.10,0.03,picamera2,IMX500
+EfficientNetB0,112 x 112,10.50,0.88,4.58,0.11,picamera2,Hailo 8l
+EfficientNetB0,120 x 160,12.04,0.88,4.58,0.11,picamera2,Hailo 8l
+EfficientNetB0,224 x 224,12.82,0.89,4.63,0.11,picamera2,Hailo 8l
+EfficientNetB0,256 x 256,16.00,0.90,4.66,0.11,picamera2,Hailo 8l
+MnasNet1.0,112 x 112,5.52,0.88,4.58,0.11,picamera2,Hailo 8l
+MnasNet1.0,120 x 160,5.66,0.88,4.59,0.11,picamera2,Hailo 8l
+MnasNet1.0,224 x 224,6.72,0.88,4.60,0.11,picamera2,Hailo 8l
+MnasNet1.0,256 x 256,6.94,0.89,4.61,0.11,picamera2,Hailo 8l
+MobileNetV2,112 x 112,4.87,0.86,4.51,0.11,picamera2,Hailo 8l
+MobileNetV2,120 x 160,5.04,0.86,4.49,0.11,picamera2,Hailo 8l
+MobileNetV2,224 x 224,5.69,0.87,4.56,0.11,picamera2,Hailo 8l
+MobileNetV2,256 x 256,5.54,0.88,4.65,0.11,picamera2,Hailo 8l
+RegNetX002,112 x 112,1.11,0.87,4.54,0.05,picamera2,Hailo 8l
+RegNetX002,120 x 160,1.23,0.87,4.55,0.05,picamera2,Hailo 8l
+RegNetX002,224 x 224,1.50,0.86,4.51,0.05,picamera2,Hailo 8l
+RegNetX002,256 x 256,1.59,0.87,4.56,0.05,picamera2,Hailo 8l
+RegNetY002,112 x 112,4.29,0.87,4.54,0.10,picamera2,Hailo 8l
+RegNetY002,120 x 160,4.53,0.88,4.60,0.10,picamera2,Hailo 8l
+RegNetY002,224 x 224,4.68,0.88,4.61,0.10,picamera2,Hailo 8l
+RegNetY002,256 x 256,6.03,0.88,4.61,0.10,picamera2,Hailo 8l
+RegNetY004,112 x 112,5.75,0.87,4.51,0.11,picamera2,Hailo 8l
+RegNetY004,120 x 160,6.45,0.88,4.59,0.11,picamera2,Hailo 8l
+RegNetY004,224 x 224,8.31,0.88,4.58,0.11,picamera2,Hailo 8l
+RegNetY004,256 x 256,9.94,0.89,4.62,0.11,picamera2,Hailo 8l
+ShuffleNetV2x1.5,112 x 112,3.74,0.88,4.60,0.11,picamera2,Hailo 8l
+ShuffleNetV2x1.5,120 x 160,5.04,0.88,4.58,0.11,picamera2,Hailo 8l
+ShuffleNetV2x1.5,224 x 224,5.13,0.88,4.59,0.11,picamera2,Hailo 8l
+ShuffleNetV2x1.5,256 x 256,5.32,0.88,4.59,0.11,picamera2,Hailo 8l

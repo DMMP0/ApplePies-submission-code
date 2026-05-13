@@ -1,35 +1,34 @@
+import argparse
+import json
 import os
-import torchvision
-import torch
-
 
 import timm
-from torchvision.models import ResNet18_Weights, EfficientNet_B0_Weights, EfficientNet_V2_S_Weights, MNASNet1_0_Weights, \
-    MobileNet_V2_Weights, ShuffleNet_V2_X1_5_Weights, SqueezeNet1_0_Weights
-
+import torch
+import torchvision
 from torchvision.io import read_image
+from torchvision.models import EfficientNet_B0_Weights, MNASNet1_0_Weights, \
+    MobileNet_V2_Weights, ShuffleNet_V2_X1_5_Weights, SqueezeNet1_0_Weights
 from torchvision.transforms.v2.functional import resize
 from tqdm import tqdm
-import json
 
-print("\n---------------------------------------- USELESS TF WARNINGS FROM MCT ------------------------------------------")
+# print("\n---------------------------------------- USELESS TF WARNINGS FROM MCT ------------------------------------------")
 import model_compression_toolkit as mct
-print("----------------------------------------------------------------------------------------------------------------\n")
+# print("----------------------------------------------------------------------------------------------------------------\n")
 
 
 # CLI args parser
 # ---------------------------------------------------------------------------------------------------------------------
 parser = argparse.ArgumentParser(
-    prog='python3 2.hailo_compiler_conversions.py',
-    description='Script used to create the ONNX models',
+    prog='python3 convert_base_onnx_with_mct.py',
+    description='Script used to produce onnx models with Sony\'s Model Compression Toolkit',
     epilog="""
 
     Example of usage: 
-    python3 2.hailo_compiler_conversions.py --config "./configs/default_hailo_conversion_config.json" """,
+    python3 convert_base_onnx_with_mct.py --config "./configs/default_mct_config.json" """,
 
     formatter_class=argparse.RawTextHelpFormatter)
 
-parser.add_argument('--config', default="./configs/default_hailo_conversion_config.json", type=str,
+parser.add_argument('--config', default="./configs/default_mct_config.json", type=str,
                     help="""Config file""")
 
 args = parser.parse_args()
@@ -46,51 +45,20 @@ torch.cuda.is_available = false
 # NB: MCT needs to recreate its own ONNX models
 
 
-resolutions = (
-    (112, 112),
-    (224, 224),
-    (256, 256),
-    (512, 512),
-    (640, 640),
-    (120, 160),
-    (480, 640),
-)
+resolutions:list[list[int]] = config["target_resolutions"]
 
 print("\nImporting networks\n\n")
 
 networks = []
 
-save_folder = './qmodels_for_imx500'
+save_folder:str = config["save_folder"]
+test_run:bool = config["test_run"]
+repr_data_folder:str = config["repr_data_folder"] # <------ CHANGE THIS IN THE CONFIG
 
-# div2k chosen because it's varied enough
-repr_data_folder = "/Data/SR_MERGED/DIV2K_train_HR/" # <------ CHANGE THIS
-
-
-# nb: yolo needs its own workflow
-
-key = 'ResNet18'
-network = torchvision.models.resnet18(weights = ResNet18_Weights.DEFAULT).eval()
-networks.append(
-    (key, network)
-)
 
 
 key = 'EfficientNetB0'
 network = torchvision.models.efficientnet_b0(weights=EfficientNet_B0_Weights.DEFAULT).eval()
-networks.append(
-    (key, network)
-)
-
-# DOES NOT WORK WITH TORCH FX
-# key = 'EfficientNetLite0'
-# network = timm.create_model('tf_efficientnet_lite0.in1k', pretrained=True).eval()
-# networks.append(
-#     (key, network)
-# )
-
-
-key = 'EfficientNetV2'
-network = torchvision.models.efficientnet_v2_s(weights=EfficientNet_V2_S_Weights.DEFAULT).eval()
 networks.append(
     (key, network)
 )
@@ -108,22 +76,6 @@ network = torchvision.models.mobilenet_v2(weights=MobileNet_V2_Weights.DEFAULT).
 networks.append(
     (key, network)
 )
-
-# DOES NOT WORK WITH TORCH FX
-# key = 'MobileViTXS'
-# from transformers import MobileViTForImageClassification
-# network = MobileViTForImageClassification.from_pretrained("apple/mobilevit-x-small")
-# networks.append(
-#     (key, network)
-# )
-#
-#
-# key = 'MobileViTXXS'
-# network = MobileViTForImageClassification.from_pretrained("apple/mobilevit-xx-small")
-# networks.append(
-#     (key, network)
-# )
-
 
 
 key = 'RegNetX002'
@@ -166,7 +118,7 @@ pass
 tensors_to_yield_base = []
 images = os.listdir(repr_data_folder)
 
-limit = 100 # more will cause the kernel to kill it due to memory leak bugs from MCT
+limit:int = config["limit"] # more will cause the kernel to kill it due to memory leak bugs from MCT
 
 for i, im_name in enumerate(tqdm(images, desc="Loading image tensors", total=limit)):
     img_path = os.path.normpath(os.path.join(repr_data_folder, im_name))
@@ -179,6 +131,10 @@ for i, im_name in enumerate(tqdm(images, desc="Loading image tensors", total=lim
 final_txt = "#!/usr/bin/bash\n"
 
 
+if test_run:
+    print("\n\nPerforming test run\n\n")
+
+
 for shape in resolutions:
 
     print(f"\nWorking with Resolution: {shape}")
@@ -186,7 +142,7 @@ for shape in resolutions:
     for name, model in networks:
         model_folder = os.path.normpath(os.path.join(save_folder, name))
         onnx_savepath = os.path.normpath(os.path.join(model_folder, f"{name}_{shape[0]}_{shape[1]}.onnx"))
-        if os.path.exists(onnx_savepath):
+        if not test_run and os.path.exists(onnx_savepath):
             print(f'Skipping {name} model with shape {shape} because {onnx_savepath} already exists\n')
             continue
 
@@ -225,7 +181,9 @@ for shape in resolutions:
             f.writelines(final_txt_net)
 
         pass
-        # exit(0)
+        if test_run:
+            print("\n\nTest run finished\n\n")
+            exit(0)
 
 
 

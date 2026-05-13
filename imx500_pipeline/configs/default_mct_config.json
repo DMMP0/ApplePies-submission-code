@@ -1,0 +1,13 @@
+{
+  "target_resolutions": [
+    [112, 112],
+    [120,160],
+    [224, 224],
+    [256, 256]
+  ],
+  "save_folder": "./qmodels_for_imx500",
+  "repr_data_folder": "/Data/SR_MERGED/DIV2K_train_HR/",
+  "test_run":true,
+  "limit": 100
+
+}

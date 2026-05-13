@@ -1,0 +1,1 @@
+hailortcli run -c 900 --batch-size 1 --measure-latency --csv "./results/results.csv" .

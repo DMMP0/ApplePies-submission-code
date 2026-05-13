@@ -1,1 +1,1 @@
-TODO
+This folder should contain the .npy calibration datasets generated on the model preparation step
