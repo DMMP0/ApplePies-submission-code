@@ -1,0 +1,13 @@
+{
+  "hw_arch": "8l",
+  "base_models_folder": "../base_networks",
+  "har_folders_save_name": "hailo_har_models",
+  "attributes_to_delete": [
+    "weight_precision",
+    "input_precision",
+    "output_precision"
+  ],
+  "start_node_name": "x"
+
+
+}

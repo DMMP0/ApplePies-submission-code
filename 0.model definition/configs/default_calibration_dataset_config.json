@@ -1,0 +1,13 @@
+{
+  "dataset_path": "/media/maurizio/data/Datasets/COCO/train2017",
+  "limit_samples": 1024,
+  "save_folder": "../calibration_datasets_np",
+  "target_resolutions": [
+    [112, 112],
+    [120,160],
+    [224, 224],
+    [256, 256]
+  ]
+
+
+}

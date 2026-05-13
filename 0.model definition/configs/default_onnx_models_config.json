@@ -1,0 +1,11 @@
+{
+  "save_folder": "../base_networks",
+  "target_resolutions": [
+    [112, 112],
+    [120,160],
+    [224, 224],
+    [256, 256]
+  ]
+
+
+}

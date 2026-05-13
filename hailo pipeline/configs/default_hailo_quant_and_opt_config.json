@@ -1,0 +1,13 @@
+{
+  "hw_arch": "8l",
+  "har_folder": "hailo_har_models",
+  "skip_if_exists": true,
+  "opt_level": 2,
+  "cal_dataset_folder": "../calibration_datasets_np",
+  "hef_save_folder": "hailo_hef_models",
+  "batch_size": 1,
+  "sample_size": 1024,
+  "test_run": true
+
+
+}
