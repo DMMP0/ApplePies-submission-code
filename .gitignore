@@ -5,6 +5,10 @@
 # ONNX models
 *.onnx
 
+# hailo files
+*.hef
+*.har
+
 # python wheels
 
 
