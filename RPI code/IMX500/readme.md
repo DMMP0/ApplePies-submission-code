@@ -24,7 +24,7 @@ As such, the file 'reset_folder_names.py' simply removes that character.
 # Latency measurements
 
 At the time of writing, proper latency measurements can only be performed with picamera2.
-Therefore, the file 'benchmark_networks_picamera.py' shouldbe run with 'benchmark_energy = False' at line 18
+Therefore, the file 'benchmark_networks_picamera.py' should be run with 'benchmark_energy = False' at line 18
 
 # Energy measurements
 
