@@ -1,3 +1,8 @@
+# Physical setup
+
+![](./images/IMX500%20with%20raspbpi.jpg)
+The physical setup consists of a Raspberry PI 5 with the Sony IMX500.
+
 # Requirements
 This scripts require two specific libraries to be installed in the RPI environment:
 

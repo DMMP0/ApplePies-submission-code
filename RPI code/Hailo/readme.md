@@ -1,7 +1,16 @@
+# Physical setup
+
+![](./images/hailo_8l_setup.jpg)
+The physical setup consists of a Raspberry PI 5 with the RPI AI Hat+, 13 TOPS version.
+
+We use the Sony IMX500 as image sensor to make the image acquisition component comparable.
+
 # Requirements
 
 This part requires the matching Hailo components to be installed in the RPI.
 Namely, HailoRT and Hailo apps (https://github.com/hailo-ai/hailo-apps)
+
+
 
 # Latency measurement
 
