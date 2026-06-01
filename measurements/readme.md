@@ -1,8 +1,8 @@
-# Requirements
+# Measurements
 
 To avoid incompatibility with previous sections (mainly caused by different Numpy versions), we used an additional environment for this section as well.
 
-# Structure
+## Structure
 
 This section contains the data produced during the measurements, organized in .csv
 

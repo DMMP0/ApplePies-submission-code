@@ -1,11 +1,11 @@
-# Prerequisites
+# IMX500 pipeline
 
 ## Python version
 
 This code should be executed in a Python 3.11 environment, as more up to date versions might not work with the IMX500 converter
 
 
-# Conversion
+## Conversion
 
 The IMX500 requires a workflow a bit different from the Hailo 8L.
 
