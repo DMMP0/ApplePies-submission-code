@@ -1,3 +1,8 @@
+# Physical setup
+
+![](./images/IMX500%20with%20raspbpi.jpg)
+The physical setup consists of a Raspberry PI 5 with the Sony IMX500.
+
 # Requirements
 This scripts require two specific libraries to be installed in the RPI environment:
 
@@ -19,7 +24,7 @@ As such, the file 'reset_folder_names.py' simply removes that character.
 # Latency measurements
 
 At the time of writing, proper latency measurements can only be performed with picamera2.
-Therefore, the file 'benchmark_networks_picamera.py' shouldbe run with 'benchmark_energy = False' at line 18
+Therefore, the file 'benchmark_networks_picamera.py' should be run with 'benchmark_energy = False' at line 18
 
 # Energy measurements
 
