@@ -15,7 +15,7 @@
 # npy datasets
 *.npy
 
-
+*venv*
 
 
 ### Linux template
