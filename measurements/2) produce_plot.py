@@ -43,7 +43,7 @@ fig.legend_.texts[15].set_text("Hailo 8L")
 
 sea.move_legend(fig, "lower right", ) #bbox_to_anchor=(1, 1))
 sea.set_context("talk")
-plt.rcParams['font.size'] = 50
+plt.rcParams['font.size'] = 100
 
 
 plt.show()
